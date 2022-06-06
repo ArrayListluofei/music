@@ -18,13 +18,13 @@
         :key="index"
         @click="hotClick(item.first)"
       >
-        <div :class="item.first == queryInfo.keywords?'text_select':'text'">
+        <div :class="item.first == queryInfo.keywords ? 'text_select' : 'text'">
           {{ item.first }}
         </div>
       </div>
     </div>
 
-    <div class="hotsearch"  v-if="isViviable">搜索结果:</div>
+    <div class="hotsearch" v-if="isViviable">搜索结果:</div>
 
     <div class="list" v-if="isViviable">
       <el-table
@@ -217,11 +217,11 @@ export default {
     height: auto;
   }
 
-  .hotsearch{
+  .hotsearch {
     margin-top: 20px;
     font-weight: bold;
     font-size: 14px;
-      color: rgb(82, 79, 79);
+    color: rgb(82, 79, 79);
   }
 
   .hot_list_out {
@@ -249,7 +249,7 @@ export default {
       color: gray;
     }
 
-     .text_select {
+    .text_select {
       border-radius: 5px;
       padding-left: 8px;
       padding-right: 8px;
@@ -257,9 +257,9 @@ export default {
       padding-bottom: 2px;
       border: 0.5px solid rgb(240, 131, 131);
       font-size: 14px;
-      color:rgb(240, 131, 131);
+      color: rgb(240, 131, 131);
     }
-     .text:hover {
+    .text:hover {
       border-radius: 5px;
       padding-left: 8px;
       padding-right: 8px;
