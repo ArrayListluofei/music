@@ -61,9 +61,32 @@ export default {
   data () {
     return {
       numList: [
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-        'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-        'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+        'O',
+        'P',
+        'Q',
+        'R',
+        'S',
+        'T',
+        'U',
+        'V',
+        'W',
+        'X',
+        'Y',
+        'Z'
       ],
       categories: [
         { name: '华语', area: '7' },
@@ -113,7 +136,10 @@ export default {
     },
     // 歌手详情
     singerClick (id) {
-      let routeData = this.$router.resolve({ path: '/SingerDetail/', query: { singerid: id } })
+      let routeData = this.$router.resolve({
+        path: '/SingerDetail/',
+        query: { singerid: id }
+      })
       window.open(routeData.href, '_blank')
     }
   },
@@ -257,7 +283,9 @@ export default {
 
       .singer_box {
         cursor: pointer;
-        margin: 15px;
+        margin-right: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
 
         .singer_img {
           border-radius: 10px;

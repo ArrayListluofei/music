@@ -34,6 +34,9 @@
       listMaxHeight="300px"
     >
     </aplayer>
+
+    <!-- 全局回到顶部 -->
+    <el-backtop></el-backtop>
   </div>
 </template>
 

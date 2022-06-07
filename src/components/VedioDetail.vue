@@ -211,7 +211,7 @@ export default {
       let linkUrl = 'http://175.24.245.11:81/#/VedioDetail/?id=' + this.id
       // 延迟解决二维码首次加载不出来的情况
       setTimeout(() => {
-      // 清空已有的二维码
+        // 清空已有的二维码
         this.$refs.qrcode.innerHTML = ''
         let el = this.$refs.qrcode
         // eslint-disable-next-line no-new

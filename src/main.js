@@ -4,17 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import './axios'
 import axios from 'axios'
-import './element'
 import router from './router'
 import Plugin from 'v-fit-columns'
 import VideoPlayer from 'vue-video-player'
 import 'vue-video-player/src/custom-theme.css'
 import 'video.js/dist/video-js.css'
 import tool from './tool'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
+// 饿了么
+Vue.use(Element)
 // 监听localstorage
 Vue.use(tool)
-
 // 视频播放
 Vue.use(VideoPlayer)
 

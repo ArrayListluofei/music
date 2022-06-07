@@ -5,7 +5,7 @@
       :show-close="false"
       :close-on-click-modal="false"
       :close-on-press-escape="false"
-      @close='handleCancle'
+      @close="handleCancle"
       title="扫码登录"
       width="30%"
       :visible.sync="dialogVisible"
@@ -186,17 +186,26 @@ export default {
     },
     // 跳转去mv详情
     mvClick (id) {
-      let routeData = this.$router.resolve({ path: '/VedioDetail/', query: { id: id } })
+      let routeData = this.$router.resolve({
+        path: '/VedioDetail/',
+        query: { id: id }
+      })
       window.open(routeData.href, '_blank')
     },
     // 跳转去歌单详情页
     songSheetClick (id) {
-      let routeData = this.$router.resolve({ path: '/SheetDetail/', query: { sheetid: id } })
+      let routeData = this.$router.resolve({
+        path: '/SheetDetail/',
+        query: { sheetid: id }
+      })
       window.open(routeData.href, '_blank')
     },
     // 歌手详情
     singerClick (id) {
-      let routeData = this.$router.resolve({ path: '/SingerDetail/', query: { singerid: id } })
+      let routeData = this.$router.resolve({
+        path: '/SingerDetail/',
+        query: { singerid: id }
+      })
       window.open(routeData.href, '_blank')
     },
     // ①获取key
@@ -338,8 +347,7 @@ export default {
     }
   },
   mounted () {},
-  destoryed () {
-  },
+  destoryed () {},
   beforeDestroy () {}
 }
 </script>
@@ -486,21 +494,21 @@ export default {
       padding-right: 20px;
       padding-bottom: 10px;
 
-      .item{
+      .item {
         display: flex;
         padding-left: 10px;
 
-         .oral {
+        .oral {
           align-self: center;
           width: 4px;
           height: 4px;
           background: gray;
           border-radius: 50px;
           margin-right: 10px;
-           margin-bottom: 20px;
+          margin-bottom: 20px;
         }
         .oral_red {
-           margin-bottom: 20px;
+          margin-bottom: 20px;
           align-self: center;
           width: 4px;
           height: 4px;
@@ -509,26 +517,26 @@ export default {
           margin-right: 10px;
         }
 
-      .tab_left_red {
-        margin-left: 5px;
-        margin-bottom: 20px;
-        color: rgb(206, 13, 13);
-      }
-      .tab_left_red:hover {
-         margin-left: 5px;
-        cursor: pointer;
-        text-decoration: underline;
-      }
-      .tab_left {
-         margin-left: 5px;
-        margin-bottom: 20px;
-        color: gray;
-      }
-      .tab_left:hover {
-         margin-left: 5px;
-        cursor: pointer;
-        text-decoration: underline;
-      }
+        .tab_left_red {
+          margin-left: 5px;
+          margin-bottom: 20px;
+          color: rgb(206, 13, 13);
+        }
+        .tab_left_red:hover {
+          margin-left: 5px;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        .tab_left {
+          margin-left: 5px;
+          margin-bottom: 20px;
+          color: gray;
+        }
+        .tab_left:hover {
+          margin-left: 5px;
+          cursor: pointer;
+          text-decoration: underline;
+        }
       }
     }
 
@@ -547,7 +555,8 @@ export default {
 
         .singer_box {
           cursor: pointer;
-          margin: 15px;
+          margin-right: 30px;
+          margin-bottom: 30px;
 
           .singer_img {
             border-radius: 10px;
@@ -642,7 +651,8 @@ export default {
 
         .songsheet_box {
           cursor: pointer;
-          margin: 10px;
+          margin-bottom: 20px;
+          margin-right: 20px;
 
           .songsheet_img {
             border-radius: 10px;

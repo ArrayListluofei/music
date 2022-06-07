@@ -13,7 +13,7 @@
           <div class="time">{{ detail.updateday }}创建</div>
         </div>
         <div class="right_line3">
-          <div class="shoucang" @click="addSheet()" >
+          <div class="shoucang" @click="addSheet()">
             <i class="el-icon-star-off" v-if="detail.isadd"></i>
             <i class="el-icon-folder-add" v-if="!detail.isadd"></i>
             <div class="text3">{{ detail.addnum }}</div>
@@ -88,9 +88,13 @@
           />
           <el-table-column prop="singer" label="歌手" width="200" />
           <el-table-column prop="zhuanji" label="专辑" width="200" />
-           <el-table-column prop="caozuo" label="操作" width="200" >
+          <el-table-column prop="caozuo" label="操作" width="200">
             <template slot-scope="scope">
-            <img src="../assets/download1.png" class="download" @click.stop="downloadMethod(scope.row.id)"/>
+              <img
+                src="../assets/download1.png"
+                class="download"
+                @click.stop="downloadMethod(scope.row.id)"
+              />
             </template>
           </el-table-column>
           <el-table-column prop="id" label="id" width="1" v-if="false" />
@@ -128,7 +132,7 @@
       </div>
     </div>
 
-     <el-dialog
+    <el-dialog
       class="share"
       :show-close="true"
       :close-on-click-modal="false"
@@ -179,10 +183,11 @@ export default {
   methods: {
     // 分享歌单,生成二维码，可以通过微信扫码分享
     shareSheet () {
-      let linkUrl = 'http://175.24.245.11:81/#/SheetDetail/?sheetid=' + this.songsheetid
+      let linkUrl =
+        'http://175.24.245.11:81/#/SheetDetail/?sheetid=' + this.songsheetid
       // 延迟解决二维码首次加载不出来的情况
       setTimeout(() => {
-      // 清空已有的二维码
+        // 清空已有的二维码
         this.$refs.qrcode.innerHTML = ''
         let el = this.$refs.qrcode
         // eslint-disable-next-line no-new
@@ -228,20 +233,22 @@ export default {
       console.log(res)
       if (res.code === 200) {
         const filePath = res.data[0].url // 获取mp3的地址
-        fetch(filePath).then(res => res.blob()).then(blob => {
-          const a = document.createElement('a')
-          document.body.appendChild(a)
-          a.style.display = 'none'
-          // 使用获取到的blob对象创建的url
-          const url = window.URL.createObjectURL(blob)
-          a.href = url
-          // 指定下载的文件名
-          a.download = id + '.mp3'
-          a.click()
-          document.body.removeChild(a)
-          // 移除blob对象的url
-          window.URL.revokeObjectURL(url)
-        })
+        fetch(filePath)
+          .then(res => res.blob())
+          .then(blob => {
+            const a = document.createElement('a')
+            document.body.appendChild(a)
+            a.style.display = 'none'
+            // 使用获取到的blob对象创建的url
+            const url = window.URL.createObjectURL(blob)
+            a.href = url
+            // 指定下载的文件名
+            a.download = id + '.mp3'
+            a.click()
+            document.body.removeChild(a)
+            // 移除blob对象的url
+            window.URL.revokeObjectURL(url)
+          })
       }
     },
     // 播放列表歌曲
@@ -414,8 +421,8 @@ export default {
             font-size: 12px;
           }
         }
-        .shoucang:hover{
-          border:0.5px solid #ccc9c9;
+        .shoucang:hover {
+          border: 0.5px solid #ccc9c9;
           cursor: pointer;
           margin-right: 10px;
           align-items: center;
@@ -514,7 +521,7 @@ export default {
           vertical-align: middle;
         }
 
-        .download{
+        .download {
           display: table-cell;
           vertical-align: middle;
           width: 20px;
@@ -523,10 +530,10 @@ export default {
         .download:hover {
           display: table-cell;
           vertical-align: middle;
-          content: url('../assets/download2.png');
+          content: url("../assets/download2.png");
           width: 20px;
           height: 20px;
-          }
+        }
       }
     }
   }

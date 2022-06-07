@@ -51,7 +51,10 @@ export default {
   methods: {
     // 跳转去详情
     mvClick (id) {
-      let routeData = this.$router.resolve({ path: '/VedioDetail/', query: { id: id } })
+      let routeData = this.$router.resolve({
+        path: '/VedioDetail/',
+        query: { id: id }
+      })
       window.open(routeData.href, '_blank')
     },
     // 获取mv列表

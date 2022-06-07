@@ -149,7 +149,10 @@ export default {
     },
     // 跳转去歌单详情页
     songSheetClick (id) {
-      let routeData = this.$router.resolve({ path: '/SheetDetail/', query: { sheetid: id } })
+      let routeData = this.$router.resolve({
+        path: '/SheetDetail/',
+        query: { sheetid: id }
+      })
       window.open(routeData.href, '_blank')
     }
   },
