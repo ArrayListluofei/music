@@ -1,6 +1,6 @@
 # vuedemo
 
-> this is my first vuew demo
+> this is my first vue demo
 
 ## Build Setup
 
